@@ -29,7 +29,7 @@ class Post(models.Model):
         return self.title
     # 自定义get_absolute_url 方法
     def get_absolute_url(self):
-        return reverse('myblog:detail',kwargs={'pk',self.pk})
+        return reverse('myblog:detail',kwargs={'pk':self.pk})
 
 
 
