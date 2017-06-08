@@ -29,7 +29,7 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<div class="logo">
-							<h1><a href="index.html">周飞博客</a></h1>
+							<h1><a href="{% url "myblog:index" %}">周飞博客</a></h1>
 						</div>
 					</div><!-- col-md-4 -->
 					<div class="col-md-8 col-sm-7 col-xs-4">
@@ -42,10 +42,10 @@
 
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   								<ul class="nav navbar-nav navbar-right">
-    								<li class="cl-effect-11"><a href="index.html" data-hover="Home">Home</a></li>
-    								<li class="cl-effect-11"><a href="full-width.html" data-hover="Blog">Blog</a></li>
-    								<li class="cl-effect-11"><a href="about.html" data-hover="About">About</a></li>
-    								<li class="cl-effect-11"><a href="contact.html" data-hover="Contact">Contact</a></li>
+    								<li class="cl-effect-11"><a href="{% url "myblog:index" %}" data-hover="Home">首页</a></li>
+    								<li class="cl-effect-11"><a href="{% url "myblog:index" %}" data-hover="Blog">Blog</a></li>
+    								<li class="cl-effect-11"><a href="{% url "myblog:index" %}" data-hover="About">About</a></li>
+    								<li class="cl-effect-11"><a href="{% url "myblog:index" %}" data-hover="Contact">Contact</a></li>
   								</ul>
 							</div><!-- /.navbar-collapse -->
 						</nav>
@@ -91,7 +91,7 @@
 							<ul>
                                 {%  for date in date_list %}
 								<li>
-									<a href="#">{{ date.year }} 年 {{ date.month }} 月</a>
+									<a href="{% url 'myblog:archives' year=date.year  month=date.month %}">{{ date.year }} 年 {{ date.month }} 月 </a>
 								</li>
 								{% empty %}
                                 暂无归档
@@ -105,7 +105,7 @@
 							<ul>
                                 {% for category in category_list %}
 								<li>
-									<a href="#">{{ category.name }}</a>
+									<a href="{% url 'myblog:category' category.pk  %}">{{ category.name }}</a>
 
 								</li>
 							 {% empty %}

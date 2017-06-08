@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+      {% extends 'base.html' %}
 					{% block main %}
                         {% for post in post_list %}
 						<article class="post post-1">
@@ -23,8 +23,8 @@
 								</div>
 							</div>
 						</article>
-                       {% empty %}
-                        <div class="no-post">暂时还没有发布文章</div>
+                          {% empty  %}
+                     <div class="no-post">暂时还没有发布文章</div>
                         {% endfor %}
 					{% endblock main %}
 
