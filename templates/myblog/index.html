@@ -4,12 +4,12 @@
 						<article class="post post-1">
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+									<a href="{% url 'myblog:detail' post.pk %}">{{ post.title }}</a>
 								</h1>
 								<div class="entry-meta">
-									<span class="post-category"><a href="#">{{ post.catagory }}</a></span>
+									<span class="post-category"><a href="#">{{ post.category }}</a></span>
 			
-									<span class="post-date"><a href="#"><time class="entry-date" datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
+									<span class="post-date"><a href="#"><time class="entry-date" datetime="{{ post.create_time }}">{{ post.create_time}}</time></a></span>
 			
 									<span class="post-author"><a href="#">{{ post.author }}</a></span>
 			

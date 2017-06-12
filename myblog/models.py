@@ -7,12 +7,18 @@ from DjangoUeditor.models import  UEditorField
 # Create your models here.
 @python_2_unicode_compatible
 class Category(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(verbose_name="分类名",max_length=100)
+    class Meta:
+        verbose_name="分类"
+        verbose_name_plural="分类"
     def __str__(self):
         return self.name
 @python_2_unicode_compatible
 class Tag(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(verbose_name="标题名",max_length=100)
+    class Meta:
+        verbose_name="标签"
+        verbose_name_plural="标签"
     def __str__(self):
         return self.name
 @python_2_unicode_compatible
@@ -28,6 +34,10 @@ class Post(models.Model):
 
     author=models.ForeignKey(User,verbose_name="作者") # 文章作者，这里User 是从django.contrib.auth.models 导入的，规定一个文章可以有一个作者，但是一个作者可以有多个文章
     body =UEditorField(u'内容	',width=1000, height=600, toolbars="full", imagePath="", filePath="", upload_settings={"imageMaxSize":1204000})
+
+    class Meta:
+        verbose_name="文章"
+        verbose_name_plural="文章"
 
     def __str__(self):
         return self.title
