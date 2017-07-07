@@ -26,7 +26,7 @@ SECRET_KEY = 'q#ts3az%jw-ujs6$e)_qd*0*9_0r$dnblvn)i2ti9b+f18p5(o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["119.29.167.104",]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myblog',
     'DjangoUeditor',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"myblog/static")
 ]
+STATIC_ROOT=os.path.join(BASE_DIR,"static")
 # 实现ckeditor
 CKEDITOR_JQUERY_URL ="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"
 MEDIA_URL="/media/"
